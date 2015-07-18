@@ -26,7 +26,7 @@ More test program can be found in the progs/ directory
 ### Datasheet
 
 #### CPU
-The CPU is a 16-bit RISC processor with a few high-level instructions for interacting with console input and output. Endianness matches that of the host machine.
+The CPU is a 16-bit little-endian RISC processor with a few high-level instructions for interacting with console input and output.
 
 ##### Registers
 * `A` (8 bit) 
@@ -43,6 +43,7 @@ The CPU is a 16-bit RISC processor with a few high-level instructions for intera
 `SP` points to next available element in stack (uninitialized). Therefore, it should never be accessed directly by program code.
 
 ##### Instruction Set
+
 * Operations
   * `BAD`:   Invalid
   * `NOP`:   Nothing
