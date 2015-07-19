@@ -44,6 +44,10 @@ The CPU is a 16-bit little-endian RISC processor with a few high-level instructi
 
 ##### Instruction Set
 
+The instruction set is pretty standard and should look familiar to most assembly programmers. The specification listed beside the instruction is C syntax, with a * indicating a memory address dereference (so for example, `*I` refers to the memory location at the address stored in register I).
+
+A numeric suffix indicates the byte size an operand literal.
+
 * Operations
   * `BAD`:   Invalid
   * `NOP`:   Nothing
@@ -134,3 +138,44 @@ Runs a program interactively on a debugger GUI (written in ncurses).
 Usage: `./debug out` (Notice no '.bin')
 
 The enter key steps the program forward, and the 'r' steps the program backwards. 
+
+### Example Program: Fibonocci
+```asm
+main:
+    PSH1 13
+    CAL2 fib
+    POP
+    PSHA
+    CAL2 printint8
+    POP
+    PSH2 endl
+    CAL2 puts
+    POP1 2
+    RET
+
+fib:
+    LAP1 1
+    CMP1 1
+    JG2 .recur
+    RET
+.recur:
+    CC
+    DECA
+    PSHA
+    CAL2 fib
+    POPX
+    PSHA
+    TXA
+    DECA
+    PSHA
+    CAL2 fib
+    POP
+    TSPI
+    DECI
+    ADD
+    POP1 1
+    RET
+
+%file lib.asm
+```
+
