@@ -21,7 +21,7 @@ Once you have built the VM, you can execute the test program by running `./cpu o
 6
 ```
 
-More test program can be found in the progs/ directory
+More test programs can be found in the progs/ directory
 
 ### Datasheet
 
