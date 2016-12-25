@@ -88,8 +88,8 @@ A numeric suffix indicates the byte size an operand literal.
   * `LDI2`:  `I = Literal`
 * Stack manipulation
   * `PSHA`:  `*SP = A; ++SP`
-  * `PSHX`:  `*SP = A; ++SP`
-  * `PSHY`:  `*SP = A; ++SP`
+  * `PSHX`:  `*SP = X; ++SP`
+  * `PSHY`:  `*SP = Y; ++SP`
   * `PSH1`:  `*SP = Lit8; ++SP`
   * `PSH2`:  `*SP = Lit16; SP += 2`
   * `POPA`:  `--SP; A = *(FP + SP)`
